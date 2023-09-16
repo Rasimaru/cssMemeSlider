@@ -74,16 +74,17 @@ label {
 
 img{
   height: auto;
-  width: 100%;
+  width: 80%;
   object-fit: cover;
 } 
 
 .text__viewport{
+  margin-left: 10%;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   order: 2;
-  flex: 1 1 70%;
+  flex: 0 1 50%;
   overflow: clip;
 }
 
@@ -105,7 +106,7 @@ img{
 #bullets {
   display: inline-flex;
   order: 3;
-  flex: 0 0 20%;
+  flex: 0 0 30%;
   align-items: flex-start;
   justify-content: flex-end;
   margin-top: -0.5rem;
@@ -217,6 +218,7 @@ img{
     margin-bottom: 2rem;
   }
   .text__viewport{
+    margin-left: 0;
     padding-left: 10%;
     flex: 1 1 auto;
     display: flex;
