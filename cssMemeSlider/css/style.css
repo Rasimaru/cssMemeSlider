@@ -1,0 +1,229 @@
+@import url(nullstyle.css);
+
+body{
+  background: #F1E9DA;
+  color: #000;
+}
+
+input[type=radio] {
+   display: none;
+}
+
+label {
+   cursor:pointer;
+   text-decoration: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 50%;
+  flex: 1 1 auto;
+}
+
+.page__slider{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.carousel__viewport {
+  max-width: 100%;
+  flex: 0 1 100%;
+  order: 1;
+  overflow: clip;
+  border-radius: 1rem;
+  /* border: 0.5rem double #000; */
+}
+
+.carousel__viewport:not(:last-child){
+  margin-bottom: 3rem;
+}
+
+.carousel__slides{
+  display: flex;
+  transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  width: 400%;
+}
+
+.carousel__slide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50vw;
+  max-height: 70vh;
+}
+
+.carousel__image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img{
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+} 
+
+.text__viewport{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 2;
+  flex: 1 1 70%;
+  overflow: clip;
+}
+
+.text__slides {
+  display: flex;
+  transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  width: 400%;
+}
+
+.text__slide{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  width: 25%;
+}
+
+#bullets {
+  display: inline-flex;
+  order: 3;
+  flex: 0 0 20%;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: -0.5rem;
+  }
+
+#bullets span{
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 30%;
+  background: #071952;
+  transition: all 0.35s;
+}
+
+#bullets label {
+  padding: 0.75rem;
+  border-radius: 100%;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1) span,
+#slide2:checked ~ #bullets label:nth-child(2) span,
+#slide3:checked ~ #bullets label:nth-child(3) span,
+#slide4:checked ~ #bullets label:nth-child(4) span {
+  background: #35A29F;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.25rem solid #000000;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1):hover,
+#slide2:checked ~ #bullets label:nth-child(2):hover,
+#slide3:checked ~ #bullets label:nth-child(3):hover,
+#slide4:checked ~ #bullets label:nth-child(4):hover {
+   cursor: default
+}
+
+#bullets label:hover span{
+  background: #0B666A;
+}
+
+#bullets label:active span{
+  background: #97FEED;
+}
+
+#slide1:checked ~ .carousel__viewport .carousel__slides,
+#slide1:checked ~ .text__viewport .text__slides {
+   margin-left: 0;
+}
+#slide2:checked ~ .carousel__viewport .carousel__slides,
+#slide2:checked ~ .text__viewport .text__slides {
+   margin-left: -100%;
+}
+#slide3:checked ~ .carousel__viewport .carousel__slides,
+#slide3:checked ~ .text__viewport .text__slides {
+   margin-left: -200%;
+}
+#slide4:checked ~ .carousel__viewport .carousel__slides,
+#slide4:checked ~ .text__viewport .text__slides {
+   margin-left: -300%;
+}
+
+.footer{
+  padding: 1rem 0;
+  background: #000;
+}
+.footer__container {
+  max-width: 60vw;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__year {}
+.footer__school {}
+.footer__student {}
+
+@media screen and (max-width: 767.97px) {
+  .page{
+    padding-top: 5%;
+    margin: 0 auto;
+    max-width: calc(100% - 20rem);
+  }
+
+  .page__slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .carousel__slide{
+    width: 30%;
+  }
+  
+  img{
+    height: auto;
+    width: 80%;
+    object-fit: cover;
+  }
+
+  #bullets{
+    flex: 1 1 auto;
+    order: 2;
+  }
+
+  #bullets:not(:last-child){
+    margin-bottom: 2rem;
+  }
+  .text__viewport{
+    padding-left: 10%;
+    flex: 1 1 auto;
+    display: flex;
+    align-self: flex-start;
+    order: 3;
+  }
+  .footer__container {
+    max-width: 90vw;
+  }
+}
