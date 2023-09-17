@@ -1,1 +1,1 @@
-https://github.com/Rasimaru/cssMemeSlider/cssMemeSlider/index.html
+https://rasimaru.github.io/cssMemeSlider/cssMemeSlider/index.html
